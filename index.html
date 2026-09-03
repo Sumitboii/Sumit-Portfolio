@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SUMIT — AI/ML engineer portfolio showcasing projects, skills and contact information">
+  <title>SUMIT — AI / ML Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="logo" href="#home">SUMIT.</a>
+    <button class="menu" aria-expanded="false" aria-controls="site-panel">☰</button>
+  </nav>
+
+  <div id="site-panel" class="panel" hidden>
+    <button class="close" aria-label="Close menu">×</button>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="k">SHIPPING INTELLIGENT IDEAS INTO REALITY.</div>
+      <h1><span class="thin">AI / ML</span><br>ENGINEER<br><span class="outline">&amp; BUILDER</span></h1>
+      <p class="intro">I build production-ready AI systems and tooling — RAG, fine-tuning, agentic workflows.</p>
+    </section>
+
+    <section class="word"><h2>SUMIT</h2></section>
+
+    <section class="wrap">
+      <div class="split">
+        <div class="label">THE PHILOSOPHY</div>
+        <div>
+          <p class="statement">I believe useful AI is born at the intersection of engineering practice, strong systems thinking and careful data work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="wrap">
+      <div class="top"><h2>Selected<br>Projects</h2><div class="label">03 / FEATURED WORK</div></div>
+
+      <div class="project">
+        <div class="num">01</div>
+        <div>
+          <div class="label">AI / RAG SYSTEM</div>
+          <h3>NovaMind — Enterprise Document Intelligence</h3>
+          <p>End-to-end document intelligence using AWS Bedrock and a RAG pipeline for fast query and retrieval.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">02</div>
+        <div>
+          <div class="label">LLM / FINE-TUNING</div>
+          <h3>Medical LLM Fine-tuning with LoRA</h3>
+          <p>Domain-adaptation workflow for a Llama 3 8B model using LoRA for medical text applications.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">03</div>
+        <div>
+          <div class="label">AGENTIC AI</div>
+          <h3>Multi-Agent Code Analysis System</h3>
+          <p>Specialized agents for code review, bug detection and security analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="wrap skills">
+      <div class="label">CAPABILITIES / TECHNICAL STACK</div>
+      <div class="marquee">
+        <div class="track"><span>PYTHON</span><span>GENERATIVE AI</span><span>RAG</span><span>CLOUD</span></div>
+      </div>
+    </section>
+
+    <section id="journey" class="wrap">
+      <div class="label">EDUCATION / JOURNEY</div>
+      <h2>Where I'm<br>Building From</h2>
+      <p class="muted">A BCA student focused on AI engineering, Generative AI and cloud-first production systems.</p>
+    </section>
+
+    <section id="contact" class="wrap contact">
+      <div class="label">GET IN TOUCH</div>
+      <h2>Let's Build<br><em>Something Intelligent</em></h2>
+      <p class="muted">Open to AI/ML, Generative AI, Data Science and internships.</p>
+
+      <!-- Contact form: wired to Formspree with a placeholder form ID. Replace YOUR_FORM_ID below with your Formspree ID. -->
+      <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact form">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div style="grid-column:1 / -1;">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <!-- Hidden input examples for Formspree; optional. -->
+        <input type="hidden" name="_subject" value="New contact from portfolio">
+        <button type="submit" class="btn primary">Send message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 SUMIT KUMAR SINGH</span>
+    <span>AI · ML · GENERATIVE AI · SOFTWARE</span>
+  </footer>
+
+  <script>
+    // Small accessibility-minded menu script
+    const menuBtn = document.querySelector('.menu');
+    const panel = document.getElementById('site-panel');
+    const closeBtn = document.querySelector('.close');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      if (panel.hidden) { panel.hidden = false; panel.querySelector('a')?.focus(); } else { panel.hidden = true; }
+    });
+    closeBtn?.addEventListener('click', () => { panel.hidden = true; menuBtn.setAttribute('aria-expanded','false'); menuBtn.focus(); });
+
+    // Simple form-submit feedback
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      // Let the form submit normally (to Formspree). For local dev you can replace the action.
+      // Optionally show a quick client-side message.
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending…';
+    });
+  </script>
+</body>
+</html>
